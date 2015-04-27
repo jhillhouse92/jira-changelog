@@ -1,8 +1,9 @@
 # Release {{version.name}}
-({{moment version.startDate format='D-MMM'}} to {{moment version.startDate format='D-MMM-YYYY'}}{{#if version.released}}, {{duration duration humanize=null}}{{/if}})
+({{moment version.startDate format='D-MMM'}} to {{#if version.released}}{{moment version.releaseDate format='D-MMM-YYYY'}}{{else}}present{{/if}}{{#if version.released}}, {{duration duration humanize=null}}{{/if}})
 
+{{#if version.description}}
 {{version.description}}
-
+{{/if}}
 {{#each issuesByType}}
 
 ## {{issuetype}}
@@ -10,7 +11,6 @@
   * [{{key}}]({{../../config.url}}/issues/{{key}}) - {{fields.summary}}
 {{/each}}
 {{/each}}
-
 
 {{#if attachments}}
 <table cellpadding="2" cellspacing="2">
