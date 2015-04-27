@@ -1,0 +1,23 @@
+# Release {{version.name}}
+({{moment version.startDate format='D-MMM'}} to {{moment version.startDate format='D-MMM-YYYY'}}{{#if version.released}}, {{duration duration humanize=null}}{{/if}})
+
+{{version.description}}
+
+{{#each issuesByType}}
+
+## {{issuetype}}
+{{#each issues}}
+  * [{{key}}]({{../../config.url}}/issues/{{key}}) - {{fields.summary}}
+{{/each}}
+{{/each}}
+
+
+{{#if attachments}}
+<table cellpadding="2" cellspacing="2">
+  <tr>
+    {{#each attachments}}
+    <td><img src="{{thumbnail}}" height="200" border="1"/></td>
+    {{/each}}
+  </tr>
+</table>
+{{/if}}
