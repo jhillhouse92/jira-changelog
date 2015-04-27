@@ -11,13 +11,13 @@ Seq().seq( ->
   jira.getProject 'PR', @
   
 ).seq((project) ->
-  #console.log '** project', project
+  #console.error '** project', project
 
   parentThis = @
   versionsDescending = _.sortByOrder project.versions, 'name', false 
     
   Seq(versionsDescending).seqMap((version) ->
-    #console.log '** version', version
+    #console.error '** version', version
     generateVersionPage project, version, @
   ).unflatten(
   ).seq((pages) ->
@@ -32,5 +32,5 @@ Seq().seq( ->
   console.log doc
 
 ).catch((err) ->
-  console.log '** err', err
+  console.error '** err', err
 )
