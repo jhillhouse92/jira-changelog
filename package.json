@@ -4,7 +4,7 @@
   "description": "Create a Markdown README for a JIRA project",
   "main": "app.js",
   "dependencies": {
-    "handlebars": "^3.0.2",
+    "handlebars": "^4.0.5",
     "handlebars-helper-moment": "^0.2.0",
     "jira": "^0.9.2",
     "lodash": "^3.10.1",
