@@ -1,7 +1,7 @@
 {
-  "name": "jira-readme",
+  "name": "jira-changelog",
   "version": "1.0.0",
-  "description": "Create a Markdown README for a JIRA project",
+  "description": "Create a CHANGELOG.md Markdown file for a JIRA project",
   "main": "app.js",
   "dependencies": {
     "handlebars": "^4.0.5",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Megalithic-LLC/jira-readme.git"
+    "url": "https://github.com/Megalithic-LLC/jira-changelog.git"
   },
   "author": "David Rauschenbach",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Megalithic-LLC/jira-readme/issues"
+    "url": "https://github.com/Megalithic-LLC/jira-changelog/issues"
   },
-  "homepage": "https://github.com/Megalithic-LLC/jira-readme"
+  "homepage": "https://github.com/Megalithic-LLC/jira-changelog"
 }
