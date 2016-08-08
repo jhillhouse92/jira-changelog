@@ -21,9 +21,9 @@ Seq()
     //console.error('** project', project);
 
     var parentThis = this;
-    var versionsAscending = _.sortByOrder(project.versions, 'name', true); 
+    var versionsDescending = _.sortByOrder(project.versions, 'name', false); 
     
-    Seq(versionsAscending)
+    Seq(versionsDescending)
       .seqMap(function(version) {
         //console.error('** version', version);
         generateVersionPage(project, version, this);
