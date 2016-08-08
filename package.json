@@ -1,8 +1,8 @@
 {
   "name": "jira-readme",
   "version": "1.0.0",
-  "description": "Create a Markdown readme for a JIRA project",
-  "main": "app.coffee",
+  "description": "Create a Markdown README for a JIRA project",
+  "main": "app.js",
   "dependencies": {
     "handlebars": "^3.0.2",
     "handlebars-helper-moment": "^0.2.0",
@@ -11,19 +11,17 @@
     "moment": "^2.10.2",
     "seq": "^0.3.5"
   },
-  "devDependencies": {
-    "coffee-script": "^1.9.2"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "coffee app.coffee"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Megalithic-LLC/jira-readme.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "David Rauschenbach",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Megalithic-LLC/jira-readme/issues"
   },
