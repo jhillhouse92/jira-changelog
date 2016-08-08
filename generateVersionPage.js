@@ -29,11 +29,9 @@ module.exports = function (project, version, cb) {
       var opts = {
         fields: ['attachment', 'issuetype', 'status', 'summary']
       };
-      console.error('** searchString', searchString);
       jira.searchJira(searchString, opts, this); 
     })
     .seq('issues', function(searchResults) { // Sort issues
-      console.error('** searchResults', searchResults);
       var issuesSorted = _.sortBy(searchResults.issues, function(issue) {
         var x;
         if (issue.fields.issuetype.name === 'Story') x = 0;
@@ -55,7 +53,7 @@ module.exports = function (project, version, cb) {
         });
         issuesByType.push({issuetype:issueType, issues:issuesForType});
       });
-      console.error('** issuesByType', issuesByType);
+      //console.error('** issuesByType', issuesByType);
       this(null, issuesByType);
     })
     .seq('attachments', function() { // Fetch attachments
@@ -67,7 +65,7 @@ module.exports = function (project, version, cb) {
           }
         });
       }); 
-      console.error('** attachments', attachments);
+      //console.error('** attachments', attachments);
       this(null, attachments);
     })
     .seq(function() { // Merge template and return

@@ -12,19 +12,20 @@ global.jira = new JiraApi(parsedUrl.protocol, parsedUrl.hostname, parsedUrl.port
 var projectKey = parsedUrl.pathname.substring(1);
 
 
+console.error('Starting');
 Seq()
   .seq(function() {
     jira.getProject(projectKey, this);
   })
   .seq(function(project) {
-    console.error('** project', project);
+    //console.error('** project', project);
 
     var parentThis = this;
     var versionsAscending = _.sortByOrder(project.versions, 'name', true); 
     
     Seq(versionsAscending)
       .seqMap(function(version) {
-        console.error('** version', version);
+        //console.error('** version', version);
         generateVersionPage(project, version, this);
       })
       .unflatten()
