@@ -1,6 +1,5 @@
 # Release {{version.name}}
-({{moment version.startDate format='D-MMM'}} to {{#if version.released}}{{moment version.releaseDate format='D-MMM-YYYY'}}{{else}}present{{/if}}{{#if version.released}}, {{duration duration humanize=null}}{{/if}})
-
+{{#if version.released}}({{moment version.startDate format='D-MMM'}} to {{moment version.releaseDate format='D-MMM-YYYY'}}{{/if}}{{#if version.released}}, {{duration duration humanize=null}}){{/if}}
 {{#if version.description}}
 {{version.description}}
 {{/if}}
@@ -8,7 +7,7 @@
 
 ## {{issuetype}}
 {{#each issues}}
-  * [{{key}}]({{../../config.url}}/browse/{{key}}) - {{fields.summary}}
+  * [{{key}}]({{../../config.parsedUrl.protocol}}//{{../../config.parsedUrl.host}}/browse/{{key}}) - {{fields.summary}}
 {{/each}}
 {{/each}}
 

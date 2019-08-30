@@ -25,10 +25,8 @@ module.exports = function (project, version, cb) {
       this();
     })
     .seq(function() { // Fetch issues
-      var searchString = 'project = ' + project.key + ' AND fixVersion = ' + version.name;
-      if (version.released) {
-        searchString += ' AND status = Done';
-      }
+      var searchString = 'project = ' + project.key + ' AND fixVersion = ' + version.name + ' AND status = Done';
+      
       //searchString += ' ORDER BY priority DESC';
       var opts = {
         fields: ['attachment', 'issuetype', 'status', 'summary']
